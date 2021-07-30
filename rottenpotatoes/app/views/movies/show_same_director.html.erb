@@ -1,6 +1,5 @@
-<!--  This file is app/views/movies/index.html.erb  (movie) -->
-<h2>All Movies</h2>
-<%=flash[:warning] %>
+<h2>Movies With Same Director</h2>
+
 <table class="table table-striped col-md-12" id="movies">
   <thead>
     <tr>
@@ -12,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @movies.each do |movie| %>
+    <% @movie_directors.each do |movie| %>
       <tr>
         <td>
           <%= movie.title %>

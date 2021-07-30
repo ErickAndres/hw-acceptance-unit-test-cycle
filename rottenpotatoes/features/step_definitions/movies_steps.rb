@@ -23,3 +23,9 @@ Then /I should see all the movies/ do
     step %{I should see "#{movie.title}"}
   end
 end
+
+Then /^the director of "([^"]*)" should be "([^"]*)"$/ do |movie_title, director_name|
+  movie = Movie.find_by(title: movie_title)
+  expect(movie.director).to have_content(director_name)
+  # first entry movie second is director name '#{director_name}'
+end
